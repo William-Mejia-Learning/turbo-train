@@ -4,7 +4,7 @@ import "../bootstrap.css";
 
 function Footer() {
   return (
-    <footer className='container footer mt-auto py-3'>
+    <footer className='container footer mt-auto py-3 _aail'>
       <ul className='nav justify-content-center border-bottom pb-3 mb-3'>
         <li className='nav-item'><a className='nav-link px-2 text-muted'>Meta</a></li>
         <li className='nav-item'><a className='nav-link px-2 text-muted'>About</a></li>
