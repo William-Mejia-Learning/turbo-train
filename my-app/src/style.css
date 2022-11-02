@@ -1,9 +1,12 @@
 body {
     background-color: #fff;
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    
 
 }
 
-/* .container{
+.container{
     height: 100%;
-} */
+}

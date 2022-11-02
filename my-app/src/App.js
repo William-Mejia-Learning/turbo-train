@@ -4,7 +4,7 @@ import Landing from './components/Landing';
 
 function App() {
   return (
-    <div>
+    <div classname="container">
       <Landing></Landing>
       <Footer></Footer>
     </div>

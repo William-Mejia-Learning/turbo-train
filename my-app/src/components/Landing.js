@@ -6,12 +6,12 @@ import "../style.css"
 function Landing() {
   return (
     <div>
-      <div className="d-flex align-items-center justify-content-center mt-5">
+      <div className="d-flex justify-content-center">
         <div className="d-flex">
           <img className="" src={img} alt="Iphone"></img>
           <div className="align-self-center">
             <form className="card"
-            style={{width: 20 + 'rem'}}>
+            style={{width: 25 + 'rem'}}>
               <div className="d-flex row p-5">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
