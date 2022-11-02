@@ -1,5 +1,9 @@
+// sudo systemctl start tomcat9.service
+
 const express = require("express");
+
 const app = express();
+
 
 const PORT = 8080;
 
