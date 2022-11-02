@@ -2,6 +2,8 @@ import React from "react";
 import "../bootstrap.css";
 import img from "../dest.jpg"
 import "../style.css"
+import Footer from "./Footer";
+import { Link } from "react-router-dom";
 
 function Landing() {
   return (
@@ -39,11 +41,12 @@ function Landing() {
               </div>
             </form>
             <div className="card mt-3 text-center">
-                <p className="pt-3">Don't have an account? <a href="/signup">Sign up</a></p>
+                <p className="pt-3">Don't have an account? <Link to={"signup"}>Sign up</Link></p>
             </div>
           </div>
         </div>
       </div>
+      <Footer></Footer>
     </div>
   );
 }
