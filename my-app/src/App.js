@@ -7,10 +7,8 @@ import "./style.css"
 function App() {
   return (
     <div>
-      <div id="page-container">
-        <Landing></Landing>
-      </div>
-      <Footer id="footer"></Footer>
+      <Landing></Landing>
+      <Footer></Footer>
     </div>
   );
 }
