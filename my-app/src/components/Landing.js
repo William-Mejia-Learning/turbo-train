@@ -1,14 +1,17 @@
 import React from "react";
 import "../bootstrap.css";
+import img from "../dest.jpg"
+import "../style.css"
 
 function Landing() {
   return (
     <div>
-      <div className="container d-flex align-items-start flex-column w-50">
+      <div className="d-flex align-items-center justify-content-center mt-5">
         <div className="d-flex">
-          <img className="w-50" src="https://about.fb.com/wp-content/uploads/2022/08/01_Explore-Not-Interested-3.jpg?resize=890%2C816" alt="Iphone"></img>
+          <img className="" src={img} alt="Iphone"></img>
           <div className="align-self-center">
-            <form className="card w-50">
+            <form className="card"
+            style={{width: 20 + 'rem'}}>
               <div className="d-flex row p-5">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -35,7 +38,7 @@ function Landing() {
                 {/* <p className="text-center mt-3 muted">OR</p> */}
               </div>
             </form>
-            <div className="card mt-3 text-center w-50">
+            <div className="card mt-3 text-center">
                 <p className="pt-3">Don't have an account? <a href="/signup">Sign up</a></p>
             </div>
           </div>
