@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router";
 import Footer from "./Footer";
 
+
+
 function Signup() {
   const [form, setForm] = useState({
     email: "",
@@ -26,20 +28,25 @@ function Signup() {
     // When a post request is sent to the create url, we'll add a new record to the database.
     const newPerson = { ...form };
 
-    await fetch("http://localhost:5000/signup", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newPerson),
-    }).catch((error) => {
-      window.alert(error);
-      return;
-    });
+  //   await fetch("http://localhost:5000/signup", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify(newPerson),
+  //   }).catch((error) => {
+  //     window.alert(error);
+  //     return;
+  //   });
 
     setForm({ email: "", name: "", username: "", password: "" });
     navigate("/");
   }
+
+
+
+
+
   return (
     <div>
       <div className="d-flex justify-content-center">
