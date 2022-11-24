@@ -3,11 +3,13 @@ const express = require('express');
 const app = express();
 const dotenv = require("dotenv").config();
 const cookieParser = require("cookie-parser");
+const cors = require('cors');
 
 // app.use(express.static("public"));
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json());
 app.use(cookieParser());
+app.use(cors());
 app.set('view engine', 'html');
 
 // create the connection to database
@@ -21,12 +23,17 @@ const connection = mysql.createConnection({
 
 connection.connect((err)=> {
 	if(err) throw err;
-	console.log("connected");
+	console.log("connected " + process.env.PORT);
+
 });
+
+app.post("/signup" ,(req,res) => {
+  console.log(req.body, 'req.body');
+})
 
 
 // app.use('/', require('./routes/pages'));
 // app.use('/profile', require('./routes/pages'));
 // app.use('/auth', require('./routes/auth'));
 
-app.listen(5000);
+app.listen(process.env.PORT);

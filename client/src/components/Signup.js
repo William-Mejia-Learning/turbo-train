@@ -28,19 +28,21 @@ function Signup() {
     // When a post request is sent to the create url, we'll add a new record to the database.
     const newPerson = { ...form };
 
-  //   await fetch("http://localhost:5000/signup", {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify(newPerson),
-  //   }).catch((error) => {
-  //     window.alert(error);
-  //     return;
-  //   });
+    await fetch("http://localhost:5000/signup", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newPerson),
+    }).catch((error) => {
+      window.alert(error);
+      return;
+    });
+
+    console.log("test")
 
     setForm({ email: "", name: "", username: "", password: "" });
-    navigate("/");
+    // navigate("/");
   }
 
 

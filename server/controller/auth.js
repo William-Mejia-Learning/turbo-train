@@ -20,9 +20,7 @@ exports.signup = async (req, res) => {
         if (err) {
             console.log(err);
         } else {
-            return res.sendFile(__dirname + "request.html", {
-                message: 'User registered'
-            });
+            return results;
         }
     })
 
