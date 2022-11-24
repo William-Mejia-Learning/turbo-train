@@ -4,10 +4,14 @@
     <p>In inside the two directories there are instructions on how to set up the react application and the server</p>
 </div>
 <div>
-    <p>MERN stands for:</p>
+    <p>Back End</p>
     <ul> 
-        <li>MongoDB</li>
+        <li>MySQL</li>
+        <li>Node</li>
         <li>Express</li>
+    </ul>
+    <p>Front End</p>
+    <ul> 
         <li>React</li>
         <li>Node</li>
     </ul>
