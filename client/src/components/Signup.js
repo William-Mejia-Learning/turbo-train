@@ -14,18 +14,17 @@ function Signup() {
   });
   const navigate = useNavigate();
 
-  // These methods will update the state properties.
   function updateForm(value) {
     return setForm((prev) => {
       return { ...prev, ...value };
     });
   }
 
-  // This function will handle the submission.
   async function onSubmit(e) {
     e.preventDefault();
+    
+    navigate("/")
 
-    // When a post request is sent to the create url, we'll add a new record to the database.
     const newPerson = { ...form };
 
     await fetch("http://localhost:5000/signup", {
@@ -38,15 +37,7 @@ function Signup() {
       window.alert(error);
       return;
     });
-
-    console.log("test")
-
-    setForm({ email: "", name: "", username: "", password: "" });
-    navigate("/");
   }
-
-
-
 
 
   return (

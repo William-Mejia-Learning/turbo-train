@@ -39,8 +39,6 @@ app.post("/signup" ,async (req,res) => {
   connection.query('INSERT INTO users SET ?', { email: email, name: name, username:username, password: hashedPassword }, (err, results) => {
       if (err) {
           console.log(err);
-      } else {
-          return results;
       }
   })
 })
