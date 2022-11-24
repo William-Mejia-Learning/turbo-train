@@ -13,7 +13,6 @@
     <p>Front End</p>
     <ul> 
         <li>React</li>
-        <li>Node</li>
     </ul>
 </div>
 
