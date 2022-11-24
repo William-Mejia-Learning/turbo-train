@@ -42,7 +42,7 @@ function Signup() {
     console.log("test")
 
     setForm({ email: "", name: "", username: "", password: "" });
-    // navigate("/");
+    navigate("/");
   }
 
 

@@ -4,6 +4,9 @@ const app = express();
 const dotenv = require("dotenv").config();
 const cookieParser = require("cookie-parser");
 const cors = require('cors');
+const jwt = require("jsonwebtoken");
+const bcrypt = require("bcryptjs");
+const { promisify } = require("util");
 
 // app.use(express.static("public"));
 app.use(express.urlencoded({ extended: false }))
@@ -27,8 +30,19 @@ connection.connect((err)=> {
 
 });
 
-app.post("/signup" ,(req,res) => {
+app.post("/signup" ,async (req,res) => {
   console.log(req.body, 'req.body');
+  const { email, name, username, password } = req.body;
+
+  let hashedPassword = await bcrypt.hash(password, 8);
+
+  connection.query('INSERT INTO users SET ?', { email: email, name: name, username:username, password: hashedPassword }, (err, results) => {
+      if (err) {
+          console.log(err);
+      } else {
+          return results;
+      }
+  })
 })
 
 
