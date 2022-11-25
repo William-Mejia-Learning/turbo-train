@@ -1,18 +1,51 @@
 import React from "react";
 import "../bootstrap.css";
-import img from "../dest.jpg"
+import img from "../0b1ad8b5b7dc32e5298b82953a5f557a2a6804e8.png"
 import "../style.css"
 import Footer from "./Footer";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { useNavigate } from "react-router";
 
 function Landing() {
+
+  const [form, setForm] = useState({
+    email: "",
+    password: "",
+  })
+
+  const navigate = useNavigate()
+
+  function updateForm(value) {
+    return setForm((prev) => {
+      return {...prev, ...value}
+    })
+  }
+
+  async function onSubmit(e) {
+    e.preventDefault()
+
+    const loginUser = {...form}
+
+    await fetch("http://localhost:5000/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(loginUser),
+    }).catch((error) => {
+      window.alert(error)
+      return
+    })
+  }
+
   return (
     <div>
       <div className="d-flex justify-content-center">
         <div className="d-flex">
-          <img className="" src={img} alt="Iphone"></img>
+          <img className="mx-3" src={img} style={{height: "600px"}} alt="Iphone"></img>
           <div className="align-self-center">
-            <form className="card"
+            <form onSubmit={onSubmit} className="card"
             style={{width: 25 + 'rem'}}>
               <div className="d-flex row p-5">
                 <svg
@@ -30,11 +63,13 @@ function Landing() {
                   type="email"
                   placeholder="Email"
                   className="form-control mb-2"
+                  onChange={(e) => updateForm({email: e.target.value})}
                 />
                 <input
                   type="password"
                   placeholder="Password"
                   className="form-control mb-3"
+                  onChange={(e) => updateForm({password: e.target.value})}
                 />
                 <button className="btn btn-primary form-control">Log in</button>
                 {/* <p className="text-center mt-3 muted">OR</p> */}
