@@ -5,6 +5,7 @@ import Signup from './components/Signup';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./bootstrap.css"
 import "./style.css"
+import Feed from './components/Feed';
 
 function App() {
   return (
@@ -13,7 +14,9 @@ function App() {
       <Routes>
         <Route path='/' element={<Landing /> }></Route>
         <Route path='/signup' element={<Signup />} />
+        <Route path='/feed' element={<Feed />} />
       </Routes>
+      
       </div>
 
 
